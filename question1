@@ -1,0 +1,23 @@
+import pandas as pd
+
+# data = {}
+# data['id'] = [1,2,3,4,5,6,7]
+# data['Name'] = ['John','Mike','Sally','Jane','Joe','Dan','Phil']
+# data['Salary'] = [300,200,550,500,600,600,550]
+# data['manager_id'] = [3,3,4,7,7,3,'NULL']
+# df = pd.DataFrame(data)  
+
+#without using pandas dataframe 
+id_ = [1,2,3,4,5,6,7]
+Name = ['John','Mike','Sally','Jane','Joe','Dan','Phil']
+Salary = [300,200,550,500,600,600,550]
+manager_id = [3,3,4,7,7,3,'NULL']
+higher_salary = []
+for index,each in enumerate(id_):
+    #data cleaning
+    if type(manager_id[index]) != int:
+        continue
+    if Salary[manager_id[index]-1] < Salary[index]:
+        higher_salary.append(Name[index])
+print(higher_salary)
+#output ['Sally', 'Joe', 'Dan']
