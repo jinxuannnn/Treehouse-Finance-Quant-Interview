@@ -42,6 +42,8 @@ cutoff1 = norm.ppf(conf_level1, mean_investment, stdev_investment)
 #finding Value at Risk daily
 var_1d1 = initial_investment - cutoff1
 print(f'The value at risk for 1-day period is {np.round(var_1d1,2)} at 95% confidence interval')
+#output 
+#The value at risk for 1-day period is 2.39 at 95% confidence interval
 
 #plotting Value at Risk for 365days
 var_array = []
@@ -51,6 +53,9 @@ for x in range(1, num_days+1):
     # print(str(x) + " day VaR @ 95% confidence: " + str(np.round(var_1d1 * np.sqrt(x),2)))
 #Value at Risk for 1 year period
 print(f'The value at risk for 1 year period is {np.round(var_1d1 * np.sqrt(365),2)} at 95% confidence interval')
+#output
+#The value at risk for 1 year period is 45.64 at 95% confidence interval
+
 # Build plot, graph is in question4Charts.md
 plt.xlabel("Day #")
 plt.ylabel("Max portfolio loss (USD)")
