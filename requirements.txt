@@ -1,0 +1,8 @@
+pandas
+pandas_datareader
+yfinance
+numpy
+datetime
+scipy
+matplotlib
+copy
