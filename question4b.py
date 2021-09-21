@@ -56,3 +56,9 @@ plt.xlabel("Day #")
 plt.ylabel("Max portfolio loss (USD)")
 plt.title("Max portfolio loss (VaR) over 15-day period")
 plt.plot(var_array, "r")
+
+
+#finding conditional Value at Risk, expectation of the conditional prob that alpha occurs
+#Not sure how to write the code to get the cVaR, my current output is 0
+cVaR = 1/conf_level1 * norm.expect(lambda x: x, loc=mean_investment, scale=stdev_investment, lb=var_1d1)
+print(cVaR)
