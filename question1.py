@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 # data = {}
 # data['id'] = [1,2,3,4,5,6,7]
 # data['Name'] = ['John','Mike','Sally','Jane','Joe','Dan','Phil']
@@ -8,6 +8,7 @@ import pandas as pd
 # df = pd.DataFrame(data)  
 
 #without using pandas dataframe 
+#question 1a
 id_ = [1,2,3,4,5,6,7]
 Name = ['John','Mike','Sally','Jane','Joe','Dan','Phil']
 Salary = [300,200,550,500,600,600,550]
@@ -21,3 +22,21 @@ for index,each in enumerate(id_):
         higher_salary.append(Name[index])
 print(higher_salary)
 #output ['Sally', 'Joe', 'Dan']
+
+#question 1b
+not_managing = []
+for index,each in enumerate(id_):
+    if each not in manager_id:
+        not_managing.append(index)
+print(not_managing)
+Salary_nm = []
+Name_nm = []
+for index in not_managing:
+    Salary_nm.append(Salary[index])
+    Name_nm.append(Name[index])
+
+print(Name_nm)
+print(np.average(Salary_nm))
+#output 
+#['John', 'Mike', 'Joe', 'Dan']
+#425.0
